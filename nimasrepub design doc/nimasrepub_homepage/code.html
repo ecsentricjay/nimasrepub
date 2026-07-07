@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>NIMASREPUB | Nigerian Medical and Allied Sciences Research Publication</title>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;family=Source+Serif+4:ital,wght@0,400;0,500;0,600;1,400&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "tertiary": "#371000",
+                        "primary-fixed-dim": "#aec6ff",
+                        "secondary-fixed-dim": "#88d982",
+                        "on-primary-container": "#7999dc",
+                        "inverse-primary": "#aec6ff",
+                        "on-primary-fixed": "#001a42",
+                        "error-container": "#ffdad6",
+                        "surface-variant": "#e3e2e8",
+                        "on-surface-variant": "#434750",
+                        "tertiary-fixed-dim": "#ffb596",
+                        "on-error-container": "#93000a",
+                        "medical-blue": "#0077C8",
+                        "error": "#ba1a1a",
+                        "status-under-review": "#F59E0B",
+                        "outline-variant": "#c4c6d2",
+                        "on-tertiary": "#ffffff",
+                        "secondary-container": "#a0f399",
+                        "on-primary-fixed-variant": "#224583",
+                        "surface-dim": "#dad9df",
+                        "science-green": "#4CAF50",
+                        "surface-container-low": "#f4f3f9",
+                        "background": "#faf9ff",
+                        "primary-fixed": "#d8e2ff",
+                        "on-primary": "#ffffff",
+                        "surface-container": "#eeedf3",
+                        "on-secondary-fixed-variant": "#005312",
+                        "primary": "#001b44",
+                        "on-secondary-fixed": "#002204",
+                        "surface-tint": "#3c5d9c",
+                        "paper-white": "#FFFFFF",
+                        "surface": "#faf9ff",
+                        "status-published": "#002F6C",
+                        "surface-bright": "#faf9ff",
+                        "ink-black": "#1A1C1E",
+                        "status-rejected": "#EF4444",
+                        "outline": "#747781",
+                        "surface-container-lowest": "#ffffff",
+                        "on-tertiary-fixed": "#360f00",
+                        "inverse-on-surface": "#f1f0f6",
+                        "on-tertiary-fixed-variant": "#753311",
+                        "inverse-surface": "#2f3035",
+                        "secondary": "#1b6d24",
+                        "surface-container-highest": "#e3e2e8",
+                        "tertiary-container": "#591f00",
+                        "status-accepted": "#10B981",
+                        "primary-container": "#002f6c",
+                        "tertiary-fixed": "#ffdbcd",
+                        "secondary-fixed": "#a3f69c",
+                        "surface-container-high": "#e8e7ed",
+                        "on-secondary": "#ffffff",
+                        "on-error": "#ffffff",
+                        "on-tertiary-container": "#db835a",
+                        "on-secondary-container": "#217128",
+                        "on-background": "#1a1b20",
+                        "on-surface": "#1a1b20"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "gutter": "24px",
+                        "container-max": "1280px",
+                        "section-gap": "64px",
+                        "unit": "4px",
+                        "margin-mobile": "16px"
+                    },
+                    "fontFamily": {
+                        "article-abstract": ["\"Source Serif 4\""],
+                        "label-sm": ["Manrope"],
+                        "headline-md": ["Manrope"],
+                        "headline-lg": ["Manrope"],
+                        "ui-body": ["Manrope"],
+                        "article-body": ["\"Source Serif 4\""],
+                        "display-lg": ["Manrope"]
+                    },
+                    "fontSize": {
+                        "article-abstract": ["20px", {"lineHeight": "34px", "fontWeight": "500"}],
+                        "label-sm": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                        "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                        "headline-lg": ["32px", {"lineHeight": "40px", "fontWeight": "600"}],
+                        "ui-body": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "article-body": ["18px", {"lineHeight": "32px", "fontWeight": "400"}],
+                        "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .serif-text { font-family: 'Source Serif 4', serif; }
+        .glass-header {
+            backdrop-filter: blur(12px);
+            background: rgba(250, 249, 255, 0.9);
+        }
+        .article-card-hover:hover {
+            transform: translateY(-4px);
+            border-color: #001b44;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-ui-body">
+<!-- TopNavBar -->
+<header class="fixed top-0 left-0 right-0 z-50 glass-header border-b border-outline-variant">
+<nav class="flex justify-between items-center w-full px-gutter max-w-container-max mx-auto h-20">
+<div class="flex items-center gap-4">
+<img alt="NIMASREPUB Logo" class="h-10 object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDrA-uldgf4CsRF9bnOBIxfUaMDtYI7wAbYJaLKX9dkHX-MhgRg2aQBO0WRYtf0a6NLwpux-6JREGHWQ2z_yCusIKDoPW-5yWIrDQj_Rye1N54dpgrhEGNQa8h_qnZVK6XSOVQucwlaC3uvDVVCddOgfgdiYOOQ0rN9N8eOl9zsIb8IP9JSCyPX92XYSfaGV5WpcBZORd5vNCJKNO5Xt6kHCfkPcOXhllVBvS_RdKk04scSyekz1bOhDO3LVJv8kLbBnSKy4dhkahnD"/>
+<span class="hidden lg:block text-headline-md font-headline-md font-bold text-primary">NIMASREPUB</span>
+</div>
+<div class="hidden md:flex items-center gap-8">
+<a class="font-label-sm text-label-sm text-primary border-b-2 border-primary pb-1" href="#">Browse</a>
+<a class="font-label-sm text-label-sm text-on-surface-variant hover:text-primary transition-colors" href="#">About</a>
+<a class="font-label-sm text-label-sm text-on-surface-variant hover:text-primary transition-colors" href="#">Guidelines</a>
+<a class="font-label-sm text-label-sm text-on-surface-variant hover:text-primary transition-colors" href="#">Login</a>
+</div>
+<div class="flex items-center gap-4">
+<button class="hidden lg:block px-6 py-2.5 bg-primary text-paper-white font-label-sm text-label-sm rounded-lg hover:bg-primary-container transition-all active:scale-95">
+                    Submit Manuscript
+                </button>
+<button class="px-6 py-2.5 border border-primary text-primary font-label-sm text-label-sm rounded-lg hover:bg-primary hover:text-white transition-all">
+                    Join
+                </button>
+</div>
+</nav>
+</header>
+<main class="mt-20">
+<!-- Hero Section -->
+<section class="relative min-h-[80vh] flex items-center overflow-hidden bg-surface-container-lowest">
+<div class="absolute inset-0 opacity-10 pointer-events-none">
+
+</div>
+<div class="max-w-container-max mx-auto px-gutter grid lg:grid-cols-2 gap-12 items-center relative z-10">
+<div class="space-y-8">
+<div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-secondary-fixed text-on-secondary-fixed text-label-sm font-label-sm">
+<span class="material-symbols-outlined text-[16px]">verified</span>
+<span>Open Access Journal | ISSN: 2736-0717</span>
+</div>
+<h1 class="font-display-lg text-display-lg text-primary max-w-xl">
+                        Advancing Health. Generating Knowledge. <span class="text-secondary">Impacting Lives.</span>
+</h1>
+<p class="font-article-abstract text-article-abstract text-on-surface-variant max-w-lg">
+                        The premier scholarly repository for Nigerian medical and allied sciences, fostering rigorous research and global scientific collaboration.
+                    </p>
+<div class="flex flex-wrap gap-4">
+<button class="px-8 py-4 bg-primary text-paper-white font-headline-md text-headline-md rounded-xl flex items-center gap-3 hover:shadow-lg transition-all active:scale-95">
+                            Submit Manuscript
+                            <span class="material-symbols-outlined">send</span>
+</button>
+<button class="px-8 py-4 border-2 border-outline text-primary font-headline-md text-headline-md rounded-xl hover:bg-surface-container transition-all">
+                            View Latest Issue
+                        </button>
+</div>
+</div>
+<div class="relative hidden lg:block">
+<div class="aspect-[4/5] rounded-2xl overflow-hidden shadow-2xl border-8 border-white">
+<img class="w-full h-full object-cover" data-alt="A high-quality medical research journal cover featuring a microscopic DNA helix image in deep blues and clinical greens. The cover is professionally designed with the NIMASREPUB masthead in clean serif typography. The lighting is bright and clinical, emphasizing scholarly authority and scientific precision in a modern laboratory setting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuApn5xiHiMgWCy8S-JCTe4k4RxyCgfnTlqYsF_e2wxII5WUuLekZaIPCgZHbCoX_8tmHOhuoaYWoRXfdN6Xn_yJbYf9meeZDrhT1-tJXtnW18dThGGZMTAhBY2DWJApZsYGltYKdeZfnn7uX2q_YFgTRRWVrf-mxMUzqAgXvITbPn3ZVmYa26lKhdNur3mK-44ZsnQfXwIaWNpPZ_TG4zgKYA0QA0uXenReNG1wGAf8o1TSdlwAS7VKcm20q9SBC8QJ8_rAWeg-BBar"/>
+</div>
+<!-- Floating Stats Card -->
+<div class="absolute -bottom-6 -left-12 bg-white p-6 rounded-xl shadow-xl border border-outline-variant max-w-[240px]">
+<div class="flex items-center gap-4 mb-4">
+<div class="w-12 h-12 rounded-full bg-secondary-container flex items-center justify-center text-on-secondary-container">
+<span class="material-symbols-outlined">trending_up</span>
+</div>
+<div>
+<p class="text-label-sm font-label-sm text-on-surface-variant">Impact Factor</p>
+<p class="text-headline-md font-headline-md text-primary">2.84</p>
+</div>
+</div>
+<div class="h-1 w-full bg-surface-container rounded-full overflow-hidden">
+<div class="h-full bg-secondary w-3/4"></div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Journal Scope & Bento Grid -->
+<section class="py-section-gap bg-surface">
+<div class="max-w-container-max mx-auto px-gutter">
+<div class="mb-12 text-center">
+<h2 class="font-headline-lg text-headline-lg text-primary mb-4">Journal Scope</h2>
+<p class="text-on-surface-variant max-w-2xl mx-auto">Multidisciplinary excellence across the entire spectrum of healthcare and laboratory sciences.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+<div class="md:col-span-2 group relative overflow-hidden rounded-2xl aspect-video md:aspect-auto border border-outline-variant bg-white p-8 hover:border-primary transition-all">
+<div class="relative z-10">
+<span class="material-symbols-outlined text-4xl text-medical-blue mb-4">medical_services</span>
+<h3 class="font-headline-md text-headline-md text-primary mb-2">Medicine &amp; Surgery</h3>
+<p class="text-on-surface-variant">Publishing clinical trials, case reports, and surgical innovations that define the future of Nigerian medicine.</p>
+</div>
+<div class="absolute bottom-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity">
+<span class="material-symbols-outlined text-[120px]">stethoscope</span>
+</div>
+</div>
+<div class="group border border-outline-variant rounded-2xl bg-white p-8 hover:border-secondary transition-all">
+<span class="material-symbols-outlined text-4xl text-secondary mb-4">clinical_notes</span>
+<h3 class="font-headline-md text-headline-md text-primary mb-2">Nursing</h3>
+<p class="text-on-surface-variant text-sm">Critical research in patient care, community health, and professional practice.</p>
+</div>
+<div class="group border border-outline-variant rounded-2xl bg-white p-8 hover:border-tertiary transition-all">
+<span class="material-symbols-outlined text-4xl text-tertiary mb-4">biotech</span>
+<h3 class="font-headline-md text-headline-md text-primary mb-2">Lab Sciences</h3>
+<p class="text-on-surface-variant text-sm">Diagnostics, pathology, and laboratory management studies.</p>
+</div>
+<div class="md:col-span-4 border border-outline-variant rounded-2xl bg-primary text-paper-white p-8 flex flex-col md:flex-row justify-between items-center gap-8">
+<div class="max-w-xl">
+<h3 class="font-headline-md text-headline-md mb-2">Public Health &amp; Epidemiology</h3>
+<p class="text-surface-variant">Our highest priority research area focused on disease surveillance, prevention strategies, and healthcare policy within the West African context.</p>
+</div>
+<button class="whitespace-nowrap px-6 py-3 bg-paper-white text-primary rounded-lg font-bold hover:bg-secondary-fixed transition-all">
+                            View Topic Collection
+                        </button>
+</div>
+</div>
+</div>
+</section>
+<!-- Latest Articles & Sidebar Section -->
+<section class="py-section-gap">
+<div class="max-w-container-max mx-auto px-gutter">
+<div class="flex flex-col lg:flex-row gap-12">
+<!-- Articles Column -->
+<div class="lg:w-2/3">
+<div class="flex justify-between items-end mb-8">
+<div>
+<h2 class="font-headline-lg text-headline-lg text-primary">Latest Articles</h2>
+<p class="text-on-surface-variant">Volume 12, Issue 3 | Released September 2024</p>
+</div>
+<a class="text-primary font-bold flex items-center gap-2 hover:underline" href="#">
+                                Archive <span class="material-symbols-outlined">arrow_forward</span>
+</a>
+</div>
+<div class="space-y-6">
+<!-- Article Card 1 -->
+<article class="article-card-hover bg-white border border-outline-variant rounded-xl p-6 transition-all cursor-pointer">
+<div class="flex gap-2 mb-3">
+<span class="px-2 py-0.5 bg-secondary-container text-on-secondary-container rounded text-[10px] font-bold uppercase tracking-wider">Original Research</span>
+<span class="px-2 py-0.5 bg-surface-container text-on-surface-variant rounded text-[10px] font-bold uppercase tracking-wider">Public Health</span>
+</div>
+<h3 class="font-article-body text-article-body serif-text font-semibold text-primary mb-2 leading-tight">
+                                    Epidemiological Trends of Malaria Transmission in Sub-Saharan Coastal Regions: A Five-Year Retrospective Study
+                                </h3>
+<p class="text-sm text-on-surface-variant mb-4">Okonkwo, A. E., Musa, Y. B., &amp; Ibrahim, S. (2024)</p>
+<div class="flex items-center justify-between pt-4 border-t border-outline-variant/30">
+<div class="flex items-center gap-4">
+<span class="text-[12px] font-medium text-outline">DOI: 10.2736/nimasrepub.v12.i3.041</span>
+</div>
+<div class="flex gap-2">
+<button class="p-2 text-primary hover:bg-surface-container rounded-lg" title="Download PDF">
+<span class="material-symbols-outlined">download</span>
+</button>
+<button class="p-2 text-primary hover:bg-surface-container rounded-lg" title="Cite">
+<span class="material-symbols-outlined">format_quote</span>
+</button>
+</div>
+</div>
+</article>
+<!-- Article Card 2 -->
+<article class="article-card-hover bg-white border border-outline-variant rounded-xl p-6 transition-all cursor-pointer">
+<div class="flex gap-2 mb-3">
+<span class="px-2 py-0.5 bg-secondary-container text-on-secondary-container rounded text-[10px] font-bold uppercase tracking-wider">Clinical Case</span>
+<span class="px-2 py-0.5 bg-surface-container text-on-surface-variant rounded text-[10px] font-bold uppercase tracking-wider">Surgery</span>
+</div>
+<h3 class="font-article-body text-article-body serif-text font-semibold text-primary mb-2 leading-tight">
+                                    Novel Minimally Invasive Techniques for Cholecystectomy in Resource-Limited Settings: A Pilot Experience
+                                </h3>
+<p class="text-sm text-on-surface-variant mb-4">Adeyemi, T. O., &amp; Williams, F. P. (2024)</p>
+<div class="flex items-center justify-between pt-4 border-t border-outline-variant/30">
+<div class="flex items-center gap-4">
+<span class="text-[12px] font-medium text-outline">DOI: 10.2736/nimasrepub.v12.i3.042</span>
+</div>
+<div class="flex gap-2">
+<button class="p-2 text-primary hover:bg-surface-container rounded-lg">
+<span class="material-symbols-outlined">download</span>
+</button>
+<button class="p-2 text-primary hover:bg-surface-container rounded-lg">
+<span class="material-symbols-outlined">format_quote</span>
+</button>
+</div>
+</div>
+</article>
+</div>
+</div>
+<!-- Sidebar -->
+<aside class="lg:w-1/3 space-y-8">
+<!-- Announcements -->
+<div class="bg-surface-container-low rounded-2xl p-6 border border-outline-variant">
+<h3 class="font-headline-md text-headline-md text-primary mb-6 flex items-center gap-2">
+<span class="material-symbols-outlined">campaign</span>
+                                Announcements
+                            </h3>
+<div class="space-y-4">
+<div class="border-l-4 border-secondary pl-4 py-1">
+<p class="text-[10px] font-bold uppercase text-secondary">October 15, 2024</p>
+<p class="text-sm font-bold text-primary">Call for Papers: Special Issue on Telemedicine</p>
+</div>
+<div class="border-l-4 border-medical-blue pl-4 py-1">
+<p class="text-[10px] font-bold uppercase text-medical-blue">September 28, 2024</p>
+<p class="text-sm font-bold text-primary">Updated Submission Guidelines for 2025</p>
+</div>
+</div>
+</div>
+<!-- Indexing Notice -->
+<div class="bg-primary text-paper-white rounded-2xl p-6 relative overflow-hidden">
+<div class="relative z-10">
+<h3 class="font-headline-md text-headline-md mb-4">Global Indexing</h3>
+<div class="flex items-center gap-3 mb-4 p-3 bg-white/10 rounded-lg">
+<span class="material-symbols-outlined text-secondary-fixed">school</span>
+<div>
+<p class="text-sm font-bold">Google Scholar</p>
+<p class="text-xs text-surface-variant">Fully Indexed &amp; Tracked</p>
+</div>
+</div>
+<p class="text-sm text-surface-variant">NIMASREPUB is committed to high visibility. All published works are indexed across major scholarly databases including CrossRef and DOAJ.</p>
+</div>
+</div>
+<!-- Editorial Board Highlight -->
+<div class="p-6 border border-outline-variant rounded-2xl bg-white">
+<h3 class="font-headline-md text-headline-md text-primary mb-4">Editorial Leadership</h3>
+<div class="flex items-center gap-4 mb-4">
+<div class="w-16 h-16 rounded-full overflow-hidden border-2 border-primary-container">
+<img class="w-full h-full object-cover" data-alt="A professional portrait of a senior medical professor, late 50s, with a dignified expression. He is wearing a white clinical coat over a formal tie. The background is a blurred academic library. Professional corporate lighting with a focus on trust and institutional authority." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD8f2FGWsyf8asztSCp2ITS2zhbPzjrWQH0oN_OAPpwu0rADw4sdnTDb-arPTR2K0A-MpsE3HYLV10_a55hWn6XQau_Dr4gfM9ktZzYOUmd1BoHnCTe0Fq2vp1xKeloTV3IkwDJ6XNngX1sGuiEo4bn5eqgVwA475V5d2lX7vrbOz5gSDGGwsKF_URvmDQ4wiP2nmO0ZcCp1XsFMx05Sz3q6F-wc7XRxh4okkdVA_scA76qY4fb8dqDprDuuKu5Nn9p-um7Rk0-JpLb"/>
+</div>
+<div>
+<p class="font-bold text-primary">Prof. Emeka Okafor</p>
+<p class="text-xs text-on-surface-variant">Editor-in-Chief</p>
+</div>
+</div>
+<button class="w-full py-3 border border-outline text-primary text-sm font-bold rounded-lg hover:bg-surface-container transition-all">
+                                View Full Board
+                            </button>
+</div>
+</aside>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-primary text-on-primary">
+<div class="w-full py-section-gap px-gutter flex flex-col md:flex-row justify-between items-start max-w-container-max mx-auto">
+<div class="max-w-md mb-8 md:mb-0">
+<img alt="NIMASREPUB Logo" class="h-12 mb-6 brightness-0 invert" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDrA-uldgf4CsRF9bnOBIxfUaMDtYI7wAbYJaLKX9dkHX-MhgRg2aQBO0WRYtf0a6NLwpux-6JREGHWQ2z_yCusIKDoPW-5yWIrDQj_Rye1N54dpgrhEGNQa8h_qnZVK6XSOVQucwlaC3uvDVVCddOgfgdiYOOQ0rN9N8eOl9zsIb8IP9JSCyPX92XYSfaGV5WpcBZORd5vNCJKNO5Xt6kHCfkPcOXhllVBvS_RdKk04scSyekz1bOhDO3LVJv8kLbBnSKy4dhkahnD"/>
+<p class="text-surface-variant/80 mb-6 font-ui-body">
+                    Promoting healthcare research and evidence-based practice across the Nigerian medical landscape through rigorous peer-reviewed scholarship.
+                </p>
+<div class="flex gap-4">
+<a class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-white/20 transition-all" href="#">
+<span class="material-symbols-outlined">face_nod</span>
+</a>
+<a class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-white/20 transition-all" href="#">
+<span class="material-symbols-outlined">alternate_email</span>
+</a>
+</div>
+</div>
+<div class="grid grid-cols-2 lg:grid-cols-3 gap-12">
+<div>
+<h4 class="font-headline-md text-headline-md text-paper-white mb-6">Journal</h4>
+<ul class="space-y-4">
+<li><a class="text-surface-variant/80 hover:text-paper-white transition-all font-label-sm text-label-sm" href="#">Privacy Policy</a></li>
+<li><a class="text-surface-variant/80 hover:text-paper-white transition-all font-label-sm text-label-sm" href="#">Publication Ethics</a></li>
+<li><a class="text-surface-variant/80 hover:text-paper-white transition-all font-label-sm text-label-sm" href="#">Open Access Statement</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-headline-md text-headline-md text-paper-white mb-6">Authors</h4>
+<ul class="space-y-4">
+<li><a class="text-surface-variant/80 hover:text-paper-white transition-all font-label-sm text-label-sm" href="#">Submit Article</a></li>
+<li><a class="text-surface-variant/80 hover:text-paper-white transition-all font-label-sm text-label-sm" href="#">Author Guidelines</a></li>
+<li><a class="text-surface-variant/80 hover:text-paper-white transition-all font-label-sm text-label-sm" href="#">APC Information</a></li>
+</ul>
+</div>
+<div class="col-span-2 lg:col-span-1">
+<h4 class="font-headline-md text-headline-md text-paper-white mb-6">Contact</h4>
+<ul class="space-y-4">
+<li class="flex items-start gap-3 text-surface-variant/80">
+<span class="material-symbols-outlined text-secondary-fixed">location_on</span>
+<span class="font-label-sm text-label-sm">Medical Research Center, Abuja, Nigeria</span>
+</li>
+<li class="flex items-center gap-3 text-surface-variant/80">
+<span class="material-symbols-outlined text-secondary-fixed">mail</span>
+<span class="font-label-sm text-label-sm">editorial@nimasrepub.org</span>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="w-full border-t border-white/10">
+<div class="max-w-container-max mx-auto px-gutter py-8 text-center md:text-left flex flex-col md:flex-row justify-between items-center gap-4">
+<p class="text-surface-variant/80 text-[12px]">
+                    © 2024 Nigerian Medical and Allied Sciences Research Publication (NIMASREPUB). All Rights Reserved. ISSN: 2736-0717
+                </p>
+<div class="flex gap-6">
+<a class="text-surface-variant/80 hover:text-paper-white text-[12px]" href="#">Google Scholar Indexing</a>
+<a class="text-surface-variant/80 hover:text-paper-white text-[12px]" href="#">Crossref</a>
+</div>
+</div>
+</div>
+</footer>
+<script>
+        // Simple micro-interactions for active state logic simulation
+        document.querySelectorAll('nav a').forEach(link => {
+            link.addEventListener('click', (e) => {
+                document.querySelectorAll('nav a').forEach(l => {
+                    l.classList.remove('text-primary', 'border-b-2', 'border-primary', 'pb-1');
+                    l.classList.add('text-on-surface-variant');
+                });
+                link.classList.add('text-primary', 'border-b-2', 'border-primary', 'pb-1');
+                link.classList.remove('text-on-surface-variant');
+            });
+        });
+    </script>
+</body></html>

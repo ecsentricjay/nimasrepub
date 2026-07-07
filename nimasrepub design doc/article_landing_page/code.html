@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>NIMASREPUB | Scholarly Article</title>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,500;0,8..60,600;1,8..60,400&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Theme Config -->
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "tertiary": "#371000",
+                    "primary-fixed-dim": "#aec6ff",
+                    "secondary-fixed-dim": "#88d982",
+                    "on-primary-container": "#7999dc",
+                    "inverse-primary": "#aec6ff",
+                    "on-primary-fixed": "#001a42",
+                    "error-container": "#ffdad6",
+                    "surface-variant": "#e3e2e8",
+                    "on-surface-variant": "#434750",
+                    "tertiary-fixed-dim": "#ffb596",
+                    "on-error-container": "#93000a",
+                    "medical-blue": "#0077C8",
+                    "error": "#ba1a1a",
+                    "status-under-review": "#F59E0B",
+                    "outline-variant": "#c4c6d2",
+                    "on-tertiary": "#ffffff",
+                    "secondary-container": "#a0f399",
+                    "on-primary-fixed-variant": "#224583",
+                    "surface-dim": "#dad9df",
+                    "science-green": "#4CAF50",
+                    "surface-container-low": "#f4f3f9",
+                    "background": "#faf9ff",
+                    "primary-fixed": "#d8e2ff",
+                    "on-primary": "#ffffff",
+                    "surface-container": "#eeedf3",
+                    "on-secondary-fixed-variant": "#005312",
+                    "primary": "#001b44",
+                    "on-secondary-fixed": "#002204",
+                    "surface-tint": "#3c5d9c",
+                    "paper-white": "#FFFFFF",
+                    "surface": "#faf9ff",
+                    "status-published": "#002F6C",
+                    "surface-bright": "#faf9ff",
+                    "ink-black": "#1A1C1E",
+                    "status-rejected": "#EF4444",
+                    "outline": "#747781",
+                    "surface-container-lowest": "#ffffff",
+                    "on-tertiary-fixed": "#360f00",
+                    "inverse-on-surface": "#f1f0f6",
+                    "on-tertiary-fixed-variant": "#753311",
+                    "inverse-surface": "#2f3035",
+                    "secondary": "#1b6d24",
+                    "surface-container-highest": "#e3e2e8",
+                    "tertiary-container": "#591f00",
+                    "status-accepted": "#10B981",
+                    "primary-container": "#002f6c",
+                    "tertiary-fixed": "#ffdbcd",
+                    "secondary-fixed": "#a3f69c",
+                    "surface-container-high": "#e8e7ed",
+                    "on-secondary": "#ffffff",
+                    "on-error": "#ffffff",
+                    "on-tertiary-container": "#db835a",
+                    "on-background": "#1a1b20",
+                    "on-surface": "#1a1b20"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "spacing": {
+                    "gutter": "24px",
+                    "container-max": "1280px",
+                    "section-gap": "64px",
+                    "unit": "4px",
+                    "margin-mobile": "16px"
+            },
+            "fontFamily": {
+                    "article-abstract": ["\"Source Serif 4\""],
+                    "label-sm": ["Manrope"],
+                    "headline-md": ["Manrope"],
+                    "headline-lg": ["Manrope"],
+                    "ui-body": ["Manrope"],
+                    "article-body": ["\"Source Serif 4\""],
+                    "display-lg": ["Manrope"]
+            },
+            "fontSize": {
+                    "article-abstract": ["20px", {"lineHeight": "34px", "fontWeight": "500"}],
+                    "label-sm": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                    "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                    "headline-lg": ["32px", {"lineHeight": "40px", "fontWeight": "600"}],
+                    "ui-body": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "article-body": ["18px", {"lineHeight": "32px", "fontWeight": "400"}],
+                    "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            display: inline-block;
+            vertical-align: middle;
+            line-height: 1;
+        }
+        .reading-container {
+            max-width: 720px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .sidebar-sticky {
+            position: sticky;
+            top: 100px;
+        }
+        .line-clamp-2 {
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+        /* Custom scroll behavior for smooth reading */
+        html { scroll-behavior: smooth; }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-ui-body">
+<!-- TopNavBar -->
+<header class="bg-surface dark:bg-primary docked full-width top-0 z-50 border-b border-outline-variant dark:border-outline h-20">
+<div class="flex justify-between items-center w-full px-gutter max-w-container-max mx-auto h-full">
+<div class="flex items-center gap-8">
+<span class="text-headline-lg font-headline-lg font-bold text-primary dark:text-primary-fixed-dim">NIMASREPUB</span>
+<nav class="hidden md:flex gap-6 items-center">
+<a class="font-label-sm text-label-sm text-primary dark:text-primary-fixed-dim border-b-2 border-primary dark:border-primary-fixed-dim pb-1" href="#">Browse</a>
+<a class="font-label-sm text-label-sm text-on-surface-variant dark:text-surface-variant hover:text-primary dark:hover:text-primary-fixed-dim transition-colors" href="#">About</a>
+<a class="font-label-sm text-label-sm text-on-surface-variant dark:text-surface-variant hover:text-primary dark:hover:text-primary-fixed-dim transition-colors" href="#">Guidelines</a>
+<a class="font-label-sm text-label-sm text-on-surface-variant dark:text-surface-variant hover:text-primary dark:hover:text-primary-fixed-dim transition-colors" href="#">Login</a>
+</nav>
+</div>
+<div class="flex items-center gap-4">
+<button class="hidden lg:flex items-center gap-2 px-4 py-2 border border-secondary text-secondary font-label-sm text-label-sm hover:bg-secondary-container transition-all">
+                    Join
+                </button>
+<button class="bg-primary text-on-primary px-6 py-2.5 font-label-sm text-label-sm active:opacity-80 active:scale-95 transition-all">
+                    Submit Manuscript
+                </button>
+</div>
+</div>
+</header>
+<main class="max-w-container-max mx-auto px-gutter py-12">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+<!-- Main Content Area (Reading Column) -->
+<div class="lg:col-span-8">
+<!-- Breadcrumbs & Metadata -->
+<nav class="flex items-center gap-2 mb-6">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Public Health</span>
+<span class="material-symbols-outlined text-[16px] text-outline">chevron_right</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Original Research</span>
+</nav>
+<!-- Article Header -->
+<article class="mb-section-gap">
+<h1 class="font-display-lg text-display-lg text-on-surface mb-8 leading-tight">
+                        Epidemiological Trends of Viral Hemorrhagic Fevers in Sub-Saharan Africa: A Longitudinal Analysis of Healthcare Infrastructure Impact
+                    </h1>
+<div class="flex flex-wrap items-start gap-y-4 mb-8">
+<div class="flex flex-wrap gap-x-2 text-ui-body">
+<span class="font-bold border-b border-primary/20 pb-0.5 cursor-help" title="University of Ibadan College of Medicine">Okonjo A. Bello</span><sup>1,2*</sup>,
+                            <span class="font-bold border-b border-primary/20 pb-0.5 cursor-help" title="Lagos State University Teaching Hospital">Chima E. Okafor</span><sup>1</sup>,
+                            <span class="font-bold border-b border-primary/20 pb-0.5 cursor-help" title="African Centre of Excellence for Genomics of Infectious Diseases">Fatima S. Abubakar</span><sup>3</sup>,
+                            <span class="font-bold border-b border-primary/20 pb-0.5 cursor-help" title="Nigerian Institute of Medical Research">Zainab T. Yusuf</span><sup>4</sup>
+</div>
+</div>
+<div class="bg-surface-container-low p-6 rounded-lg mb-10 border border-outline-variant/30">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6 font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant">
+<div>
+<p class="mb-1 text-primary">DOI</p>
+<p class="text-on-surface normal-case font-medium">https://doi.org/10.5555/nimasrepub.2024.10234</p>
+</div>
+<div>
+<p class="mb-1 text-primary">Published</p>
+<p class="text-on-surface normal-case font-medium">October 24, 2024</p>
+</div>
+</div>
+</div>
+<!-- Abstract Section -->
+<section class="mb-12" id="abstract">
+<h2 class="font-headline-md text-headline-md mb-4 flex items-center gap-2">
+<span class="w-8 h-0.5 bg-primary"></span> Abstract
+                        </h2>
+<div class="font-article-abstract text-article-abstract text-on-surface-variant italic leading-relaxed">
+                            This study examines the evolving landscape of Viral Hemorrhagic Fevers (VHFs) across West and Central Africa from 2014 to 2024. By synthesizing epidemiological data from fourteen regional health ministries, we analyze the correlation between healthcare facility density and case-fatality rates. Our findings indicate a statistically significant reduction in latency periods for outbreak reporting in regions with integrated genomic surveillance networks. The paper concludes that localized laboratory capacity is the primary determinant of containment success, surpassing traditional resource-based predictors.
+                        </div>
+</section>
+<!-- Keywords -->
+<div class="flex flex-wrap gap-3 mb-12">
+<span class="font-label-sm text-label-sm text-primary uppercase pt-1">Keywords:</span>
+<a class="px-3 py-1 bg-surface-container text-on-surface-variant rounded-full font-label-sm text-label-sm hover:bg-primary hover:text-on-primary transition-all" href="#">Genomics</a>
+<a class="px-3 py-1 bg-surface-container text-on-surface-variant rounded-full font-label-sm text-label-sm hover:bg-primary hover:text-on-primary transition-all" href="#">Epidemiology</a>
+<a class="px-3 py-1 bg-surface-container text-on-surface-variant rounded-full font-label-sm text-label-sm hover:bg-primary hover:text-on-primary transition-all" href="#">Lassa Fever</a>
+<a class="px-3 py-1 bg-surface-container text-on-surface-variant rounded-full font-label-sm text-label-sm hover:bg-primary hover:text-on-primary transition-all" href="#">Public Health</a>
+</div>
+<!-- Body Preview (Demo only) -->
+<section class="reading-container">
+<h3 class="font-headline-md text-headline-md mb-4">Introduction</h3>
+<p class="font-article-body text-article-body text-on-surface mb-6">
+                            Viral hemorrhagic fevers represent a persistent challenge to global health security. In the Nigerian context, annual outbreaks of Lassa fever necessitate a robust and reactive diagnostic framework. Despite significant advancements in mobile healthcare delivery, the structural disparities between urban centers and rural hinterlands remain a critical variable in viral propagation dynamics.
+                        </p>
+<div class="my-10 bg-surface-container-highest h-[400px] w-full flex items-center justify-center relative overflow-hidden rounded-xl border border-outline-variant">
+<img class="w-full h-full object-cover opacity-80" data-alt="A professional scientific data visualization showing a geographical heat map of West Africa with glowing clusters representing epidemiological data points. The map is rendered in a minimalist dark theme with professional medical blue and science green accents, showcasing institutional authority and precise research data." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCgTXrucUlD1KEQdeqD2tQ1Y5QwVGJdA_7bS71bnwQC4_XvGwRLhkT-QxBdKZOPN_jG0w3AZcl-8qGtzXYDBcbuq36aMDXqrwJbj6OhHKjpJ3K57vGjolaJtwz5bP1db9h7DLIlbZQX-h4Op_tQmAe0JxYUuV2nFsQTsg_ynOVntCUVQItZsFABhH01eYlxhQUaJDVK5-UldsPoUCbK_RL6QVnHWL6782C7fC4Fc3xE17gTiL8iKzWGwFk_1zOBmoHP_bfsJqUsQsO5"/>
+<div class="absolute bottom-0 left-0 right-0 p-4 bg-ink-black/60 backdrop-blur-md text-paper-white">
+<p class="font-label-sm text-label-sm">Figure 1. Regional distribution of diagnostic laboratory clusters vs. reported VHF clusters (2014-2024).</p>
+</div>
+</div>
+</section>
+</article>
+</div>
+<!-- Sidebar -->
+<aside class="lg:col-span-4">
+<div class="sidebar-sticky space-y-8">
+<!-- Action Panel -->
+<div class="bg-surface-container p-6 rounded-xl space-y-4">
+<button class="w-full bg-primary text-on-primary flex items-center justify-center gap-3 py-4 rounded-lg font-headline-md text-[18px] hover:shadow-lg transition-all group">
+<span class="material-symbols-outlined">download</span>
+                            Download PDF
+                        </button>
+<div class="grid grid-cols-2 gap-3">
+<button class="flex flex-col items-center justify-center p-4 border border-outline-variant hover:bg-primary hover:text-on-primary rounded-lg transition-all">
+<span class="material-symbols-outlined mb-1">format_quote</span>
+<span class="font-label-sm text-label-sm">Cite This</span>
+</button>
+<button class="flex flex-col items-center justify-center p-4 border border-outline-variant hover:bg-error hover:text-on-error rounded-lg transition-all group">
+<span class="material-symbols-outlined mb-1 group-hover:text-on-error text-error">report_problem</span>
+<span class="font-label-sm text-label-sm">Correction</span>
+</button>
+</div>
+<button class="w-full py-3 flex items-center justify-center gap-2 font-label-sm text-label-sm text-on-surface-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-[20px]">share</span>
+                            Share Research
+                        </button>
+</div>
+<!-- Related Content -->
+<div class="space-y-6">
+<h4 class="font-headline-md text-headline-md border-b-2 border-primary pb-2 inline-block">Related Research</h4>
+<div class="space-y-6">
+<!-- Related Card 1 -->
+<a class="block group" href="#">
+<span class="text-science-green font-label-sm text-[10px] uppercase tracking-widest mb-1 block">In This Issue</span>
+<h5 class="font-headline-sm text-[16px] font-bold group-hover:text-medical-blue transition-colors leading-snug line-clamp-2">
+                                    Genomic Sequencing of Ribavirin Resistance in Lassa Virus Strains
+                                </h5>
+<p class="text-on-surface-variant font-label-sm text-[12px] mt-1">Solomon et al. • 2024</p>
+</a>
+<!-- Related Card 2 -->
+<a class="block group" href="#">
+<h5 class="font-headline-sm text-[16px] font-bold group-hover:text-medical-blue transition-colors leading-snug line-clamp-2">
+                                    Telemedicine Interventions in Rural Northern Nigeria: A Pilot Study
+                                </h5>
+<p class="text-on-surface-variant font-label-sm text-[12px] mt-1">Danjuma &amp; Smith • 2023</p>
+</a>
+<!-- Related Card 3 -->
+<a class="block group" href="#">
+<h5 class="font-headline-sm text-[16px] font-bold group-hover:text-medical-blue transition-colors leading-snug line-clamp-2">
+                                    Community-Led Contact Tracing: Lessons from the 2018 Ebola Outbreak
+                                </h5>
+<p class="text-on-surface-variant font-label-sm text-[12px] mt-1">Mensah et al. • 2023</p>
+</a>
+</div>
+</div>
+<!-- Metrics Card -->
+<div class="bg-primary-container p-6 rounded-xl text-on-primary-fixed">
+<h4 class="font-label-sm text-label-sm uppercase tracking-wider mb-4 opacity-70">Article Impact</h4>
+<div class="flex items-center justify-between">
+<div>
+<p class="text-[24px] font-bold">1,248</p>
+<p class="text-[12px] opacity-80">Views</p>
+</div>
+<div class="h-8 w-px bg-on-primary-fixed/20"></div>
+<div>
+<p class="text-[24px] font-bold">84</p>
+<p class="text-[12px] opacity-80">Citations</p>
+</div>
+<div class="h-8 w-px bg-on-primary-fixed/20"></div>
+<div>
+<p class="text-[24px] font-bold">12</p>
+<p class="text-[12px] opacity-80">Policy Refs</p>
+</div>
+</div>
+</div>
+</div>
+</aside>
+</div>
+</main>
+<!-- Footer -->
+<footer class="bg-primary dark:bg-ink-black text-on-primary dark:text-surface-variant mt-section-gap">
+<div class="w-full py-section-gap px-gutter flex flex-col md:flex-row justify-between items-start max-w-container-max mx-auto">
+<div class="mb-10 md:mb-0 max-w-sm">
+<span class="text-headline-md font-headline-md text-paper-white block mb-4">NIMASREPUB</span>
+<p class="font-ui-body text-ui-body opacity-70 mb-6">
+                    Advancing medical knowledge and clinical practice through rigorous, peer-reviewed research in Nigerian and allied health sciences.
+                </p>
+<div class="flex gap-4">
+<span class="material-symbols-outlined cursor-pointer hover:text-secondary-fixed transition-colors">public</span>
+<span class="material-symbols-outlined cursor-pointer hover:text-secondary-fixed transition-colors">description</span>
+<span class="material-symbols-outlined cursor-pointer hover:text-secondary-fixed transition-colors">mail</span>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-x-12 gap-y-8">
+<div class="flex flex-col gap-3">
+<h6 class="font-label-sm text-label-sm uppercase tracking-widest text-secondary-fixed">Resources</h6>
+<a class="font-label-sm text-label-sm text-surface-variant/80 hover:text-paper-white hover:underline transition-all" href="#">Privacy Policy</a>
+<a class="font-label-sm text-label-sm text-surface-variant/80 hover:text-paper-white hover:underline transition-all" href="#">Publication Ethics</a>
+<a class="font-label-sm text-label-sm text-surface-variant/80 hover:text-paper-white hover:underline transition-all" href="#">Open Access Statement</a>
+</div>
+<div class="flex flex-col gap-3">
+<h6 class="font-label-sm text-label-sm uppercase tracking-widest text-secondary-fixed">Indexing</h6>
+<a class="font-label-sm text-label-sm text-surface-variant/80 hover:text-paper-white hover:underline transition-all" href="#">Google Scholar</a>
+<a class="font-label-sm text-label-sm text-surface-variant/80 hover:text-paper-white hover:underline transition-all" href="#">PubMed Central</a>
+<a class="font-label-sm text-label-sm text-surface-variant/80 hover:text-paper-white hover:underline transition-all" href="#">Contact Us</a>
+</div>
+</div>
+</div>
+<div class="max-w-container-max mx-auto px-gutter py-8 border-t border-white/10 text-center md:text-left">
+<p class="font-label-sm text-label-sm opacity-50">
+                © 2024 Nigerian Medical and Allied Sciences Research Publication (NIMASREPUB). All Rights Reserved. ISSN: 2736-0717
+            </p>
+</div>
+</footer>
+<!-- Micro-interaction Script -->
+<script>
+        // Simple citation builder alert for demo
+        document.querySelector('button:has(.material-symbols-outlined:contains("format_quote"))').addEventListener('click', () => {
+            const doi = "10.5555/nimasrepub.2024.10234";
+            const authors = "Bello, O. A., et al.";
+            const title = "Epidemiological Trends of Viral Hemorrhagic Fevers in Sub-Saharan Africa";
+            const citation = `${authors} (2024). ${title}. NIMASREPUB. DOI: ${doi}`;
+            
+            alert("Citation copied to clipboard:\n\n" + citation);
+        });
+
+        // Add subtle scroll reveal effect for article sections
+        const observerOptions = {
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('opacity-100', 'translate-y-0');
+                    entry.target.classList.remove('opacity-0', 'translate-y-4');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('section').forEach(section => {
+            section.classList.add('transition-all', 'duration-700', 'opacity-0', 'translate-y-4');
+            observer.observe(section);
+        });
+    </script>
+</body></html>

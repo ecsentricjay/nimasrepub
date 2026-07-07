@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Author Dashboard | NIMASREPUB</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;family=Source+Serif+4:ital,wght@0,400;0,500;0,600;1,400&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+        .active-nav-indicator {
+            font-variation-settings: 'FILL' 1;
+        }
+        /* Custom scrollbar for scholarly feel */
+        ::-webkit-scrollbar {
+            width: 6px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f4f3f9;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #c4c6d2;
+            border-radius: 10px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #747781;
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "tertiary": "#371000",
+                        "primary-fixed-dim": "#aec6ff",
+                        "secondary-fixed-dim": "#88d982",
+                        "on-primary-container": "#7999dc",
+                        "inverse-primary": "#aec6ff",
+                        "on-primary-fixed": "#001a42",
+                        "error-container": "#ffdad6",
+                        "surface-variant": "#e3e2e8",
+                        "on-surface-variant": "#434750",
+                        "tertiary-fixed-dim": "#ffb596",
+                        "on-error-container": "#93000a",
+                        "medical-blue": "#0077C8",
+                        "error": "#ba1a1a",
+                        "status-under-review": "#F59E0B",
+                        "outline-variant": "#c4c6d2",
+                        "on-tertiary": "#ffffff",
+                        "secondary-container": "#a0f399",
+                        "on-primary-fixed-variant": "#224583",
+                        "surface-dim": "#dad9df",
+                        "science-green": "#4CAF50",
+                        "surface-container-low": "#f4f3f9",
+                        "background": "#faf9ff",
+                        "primary-fixed": "#d8e2ff",
+                        "on-primary": "#ffffff",
+                        "surface-container": "#eeedf3",
+                        "on-secondary-fixed-variant": "#005312",
+                        "primary": "#001b44",
+                        "on-secondary-fixed": "#002204",
+                        "surface-tint": "#3c5d9c",
+                        "paper-white": "#FFFFFF",
+                        "surface": "#faf9ff",
+                        "status-published": "#002F6C",
+                        "surface-bright": "#faf9ff",
+                        "ink-black": "#1A1C1E",
+                        "status-rejected": "#EF4444",
+                        "outline": "#747781",
+                        "surface-container-lowest": "#ffffff",
+                        "on-tertiary-fixed": "#360f00",
+                        "inverse-on-surface": "#f1f0f6",
+                        "on-tertiary-fixed-variant": "#753311",
+                        "inverse-surface": "#2f3035",
+                        "secondary": "#1b6d24",
+                        "surface-container-highest": "#e3e2e8",
+                        "tertiary-container": "#591f00",
+                        "status-accepted": "#10B981",
+                        "primary-container": "#002f6c",
+                        "tertiary-fixed": "#ffdbcd",
+                        "secondary-fixed": "#a3f69c",
+                        "surface-container-high": "#e8e7ed",
+                        "on-secondary": "#ffffff",
+                        "on-error": "#ffffff",
+                        "on-tertiary-container": "#db835a",
+                        "on-background": "#1a1b20",
+                        "on-surface": "#1a1b20"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "gutter": "24px",
+                        "container-max": "1280px",
+                        "section-gap": "64px",
+                        "unit": "4px",
+                        "margin-mobile": "16px"
+                    },
+                    "fontFamily": {
+                        "article-abstract": ["\"Source Serif 4\""],
+                        "label-sm": ["Manrope"],
+                        "headline-md": ["Manrope"],
+                        "headline-lg": ["Manrope"],
+                        "ui-body": ["Manrope"],
+                        "article-body": ["\"Source Serif 4\""],
+                        "display-lg": ["Manrope"]
+                    },
+                    "fontSize": {
+                        "article-abstract": ["20px", {"lineHeight": "34px", "fontWeight": "500"}],
+                        "label-sm": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                        "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                        "headline-lg": ["32px", {"lineHeight": "40px", "fontWeight": "600"}],
+                        "ui-body": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "article-body": ["18px", {"lineHeight": "32px", "fontWeight": "400"}],
+                        "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}]
+                    }
+                },
+            },
+        }
+    </script>
+</head>
+<body class="bg-background text-on-surface font-ui-body">
+<!-- Sidebar Navigation -->
+<aside class="hidden md:flex flex-col h-full w-64 fixed left-0 top-0 bg-surface-container-low dark:bg-surface-container border-r border-outline-variant dark:border-outline z-50">
+<div class="p-6">
+<h1 class="font-headline-md text-headline-md font-black text-primary dark:text-primary-fixed">NIMASREPUB</h1>
+<p class="font-label-sm text-label-sm text-on-surface-variant mt-1">Author Dashboard</p>
+</div>
+<div class="px-4 py-2 space-y-2 flex-grow">
+<!-- New Submission CTA -->
+<button class="w-full flex items-center justify-center gap-2 py-3 px-4 bg-primary text-on-primary font-label-sm text-label-sm rounded-xl hover:opacity-90 active:scale-95 transition-all mb-6">
+<span class="material-symbols-outlined text-[20px]">add_circle</span>
+                New Submission
+            </button>
+<!-- Nav Links -->
+<nav class="space-y-1">
+<a class="flex items-center gap-3 px-4 py-3 bg-secondary-container text-on-secondary-container dark:bg-on-secondary-fixed-variant dark:text-secondary-fixed rounded-xl transition-all scale-98" href="#">
+<span class="material-symbols-outlined active-nav-indicator" data-icon="dashboard">dashboard</span>
+<span class="font-label-sm text-label-sm">Dashboard</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:bg-surface-variant rounded-xl transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="description">description</span>
+<span class="font-label-sm text-label-sm">My Manuscripts</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:bg-surface-variant rounded-xl transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="assignment_turned_in">assignment_turned_in</span>
+<span class="font-label-sm text-label-sm">Review Tasks</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:bg-surface-variant rounded-xl transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+<span class="font-label-sm text-label-sm">Settings</span>
+</a>
+</nav>
+</div>
+<!-- Sidebar Footer -->
+<div class="p-4 border-t border-outline-variant mt-auto">
+<nav class="space-y-1">
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:bg-surface-variant rounded-xl transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="help">help</span>
+<span class="font-label-sm text-label-sm">Help Center</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:bg-surface-variant rounded-xl transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="logout">logout</span>
+<span class="font-label-sm text-label-sm">Logout</span>
+</a>
+</nav>
+</div>
+</aside>
+<!-- Main Content Canvas -->
+<main class="md:ml-64 min-h-screen">
+<!-- Top App Bar (Author Header) -->
+<header class="h-20 w-full flex justify-between items-center px-gutter bg-surface dark:bg-primary border-b border-outline-variant sticky top-0 z-40">
+<div class="flex flex-col">
+<h2 class="font-headline-md text-headline-md text-primary dark:text-on-primary-fixed">Welcome, Dr. Adeniyi</h2>
+</div>
+<div class="flex items-center gap-4">
+<div class="text-right hidden sm:block">
+<p class="font-label-sm text-label-sm font-bold text-on-surface">Dr. Samuel Adeniyi</p>
+<p class="text-[11px] text-on-surface-variant opacity-70">ORCID: 0000-0002-1825-0097</p>
+</div>
+<div class="w-10 h-10 rounded-full bg-primary-container flex items-center justify-center text-on-primary-fixed overflow-hidden border border-outline-variant">
+<img class="w-full h-full object-cover" data-alt="A professional headshot of a middle-aged Nigerian medical researcher in a modern office. The lighting is soft and natural, emphasizing a look of wisdom and academic authority. The background is a slightly blurred bookshelf of medical journals. The overall color palette is professional, utilizing the deep blues and greens of the NIMASREPUB brand system." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAqrTjmMr-7levvAjKQlJIel73z0IVngvEuMkAqobacyxwbMxSgyrRw7V6SDxx1ohpJEUt6X8K6dR_MSWpTZzIz29FCvkK2coomQTdZvJC-VgpFnsmCKDyaAL6Uv1OdZCv2ofeHDiJrS8YD6n949biu_VOjDovPo6ku8ARE6EmNuZ5ft3oQFbIore7FCohnRH1QZz6Z5BJLddiZmU3ESColsBrvrLgwAUMyLFBv-wFexRQnUGz1KmoQeKMcqGE2nNtVbjTx1Uyv0NpQ"/>
+</div>
+</div>
+</header>
+<!-- Dashboard Content -->
+<div class="max-w-container-max mx-auto p-gutter space-y-8">
+<!-- Quick Stats Bento -->
+<section class="grid grid-cols-1 md:grid-cols-4 gap-6">
+<div class="bg-surface-container-lowest p-6 rounded-xl border border-outline-variant">
+<p class="font-label-sm text-label-sm text-on-surface-variant mb-1">Total Submissions</p>
+<p class="font-display-lg text-display-lg text-primary">12</p>
+</div>
+<div class="bg-surface-container-lowest p-6 rounded-xl border border-outline-variant">
+<p class="font-label-sm text-label-sm text-on-surface-variant mb-1">In Review</p>
+<p class="font-display-lg text-display-lg text-status-under-review">3</p>
+</div>
+<div class="bg-surface-container-lowest p-6 rounded-xl border border-outline-variant">
+<p class="font-label-sm text-label-sm text-on-surface-variant mb-1">Published</p>
+<p class="font-display-lg text-display-lg text-status-accepted">7</p>
+</div>
+<div class="bg-surface-container-lowest p-6 rounded-xl border border-outline-variant bg-primary-container">
+<p class="font-label-sm text-label-sm text-primary-fixed-dim mb-1">ORCID Affiliation</p>
+<p class="font-label-sm text-label-sm text-paper-white">Lagos University Teaching Hospital (LUTH)</p>
+</div>
+</section>
+<!-- Manuscripts Section -->
+<section class="space-y-4">
+<div class="flex justify-between items-end">
+<h3 class="font-headline-md text-headline-md text-primary">My Manuscripts</h3>
+<div class="flex gap-2">
+<button class="px-4 py-2 bg-surface-container-high rounded-lg font-label-sm text-label-sm text-on-surface hover:bg-surface-variant transition-colors">Export List</button>
+<div class="relative">
+<span class="absolute left-3 top-1/2 -translate-y-1/2 material-symbols-outlined text-[18px] text-outline" data-icon="search">search</span>
+<input class="pl-10 pr-4 py-2 bg-surface-container-lowest border border-outline-variant rounded-lg font-label-sm text-label-sm focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none transition-all" placeholder="Search titles..." type="text"/>
+</div>
+</div>
+</div>
+<!-- Submission List Card Layout (Modern Table alternative) -->
+<div class="space-y-4">
+<!-- Manuscript Item 1: Under Review -->
+<div class="group bg-surface-container-lowest p-6 rounded-xl border border-outline-variant hover:border-primary transition-all duration-300">
+<div class="flex flex-col md:flex-row justify-between gap-4">
+<div class="space-y-2 max-w-3xl">
+<div class="flex items-center gap-3">
+<span class="px-3 py-1 bg-[#FFFBEB] text-[#B45309] font-label-sm text-[10px] uppercase rounded-full border border-[#FEF3C7]">Under Review</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">ID: NIMAS-2024-0421</span>
+</div>
+<h4 class="font-article-abstract text-[18px] font-semibold text-primary leading-tight group-hover:text-medical-blue transition-colors">
+                                    Impact of Telemedicine on Maternal Health Outcomes in Rural Southwestern Nigeria: A Comparative Study
+                                </h4>
+<div class="flex items-center gap-4 font-label-sm text-label-sm text-on-surface-variant">
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[16px]" data-icon="schedule">schedule</span> Submitted: Oct 12, 2024</span>
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[16px]" data-icon="group">group</span> 4 Co-authors</span>
+</div>
+</div>
+<div class="flex md:flex-col justify-end gap-2 shrink-0">
+<button class="px-4 py-2 bg-primary text-on-primary rounded-lg font-label-sm text-label-sm hover:opacity-90">Check Status</button>
+<button class="px-4 py-2 border border-outline-variant rounded-lg font-label-sm text-label-sm text-on-surface-variant hover:bg-surface-variant">View Submission</button>
+</div>
+</div>
+</div>
+<!-- Manuscript Item 2: Revision Required -->
+<div class="group bg-surface-container-lowest p-6 rounded-xl border border-outline-variant hover:border-primary transition-all duration-300">
+<div class="flex flex-col md:flex-row justify-between gap-4">
+<div class="space-y-2 max-w-3xl">
+<div class="flex items-center gap-3">
+<span class="px-3 py-1 bg-error-container text-error font-label-sm text-[10px] uppercase rounded-full border border-red-200">Revision Required</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">ID: NIMAS-2024-0315</span>
+</div>
+<h4 class="font-article-abstract text-[18px] font-semibold text-primary leading-tight group-hover:text-medical-blue transition-colors">
+                                    Genetic Diversity of Plasmodium Falciparum in Asymptomatic Carriers: Implications for Malaria Elimination
+                                </h4>
+<div class="flex items-center gap-4 font-label-sm text-label-sm text-on-surface-variant">
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[16px]" data-icon="priority_high">priority_high</span> Deadline: Nov 15, 2024</span>
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[16px]" data-icon="chat_bubble">chat_bubble</span> 3 Reviewer Comments</span>
+</div>
+</div>
+<div class="flex md:flex-col justify-end gap-2 shrink-0">
+<button class="px-4 py-2 bg-secondary text-on-secondary rounded-lg font-label-sm text-label-sm hover:opacity-90">Submit Revision</button>
+<button class="px-4 py-2 border border-outline-variant rounded-lg font-label-sm text-label-sm text-on-surface-variant hover:bg-surface-variant">Read Feedback</button>
+</div>
+</div>
+</div>
+<!-- Manuscript Item 3: Published -->
+<div class="group bg-surface-container-lowest p-6 rounded-xl border border-outline-variant hover:border-primary transition-all duration-300">
+<div class="flex flex-col md:flex-row justify-between gap-4">
+<div class="space-y-2 max-w-3xl">
+<div class="flex items-center gap-3">
+<span class="px-3 py-1 bg-secondary-container text-on-secondary-container font-label-sm text-[10px] uppercase rounded-full border border-green-200">Published</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">DOI: 10.2736/nimasrepub.2024.1204</span>
+</div>
+<h4 class="font-article-abstract text-[18px] font-semibold text-primary leading-tight group-hover:text-medical-blue transition-colors">
+                                    Prevalence of Multidrug-Resistant Tuberculosis in North-Central Nigeria: A Five-Year Retrospective Analysis
+                                </h4>
+<div class="flex items-center gap-4 font-label-sm text-label-sm text-on-surface-variant">
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[16px]" data-icon="visibility">visibility</span> 1.2k Views</span>
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[16px]" data-icon="download">download</span> 450 Downloads</span>
+</div>
+</div>
+<div class="flex md:flex-col justify-end gap-2 shrink-0">
+<button class="px-4 py-2 bg-status-published text-on-primary rounded-lg font-label-sm text-label-sm hover:opacity-90">View Online</button>
+<button class="px-4 py-2 border border-outline-variant rounded-lg font-label-sm text-label-sm text-on-surface-variant hover:bg-surface-variant">Impact Stats</button>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Helpful Resources Asymmetric Grid -->
+<section class="grid grid-cols-1 lg:grid-cols-3 gap-6 pt-10">
+<div class="lg:col-span-2 bg-primary rounded-2xl p-8 text-on-primary relative overflow-hidden flex flex-col justify-between min-h-[240px]">
+<div class="relative z-10">
+<h4 class="font-headline-md text-headline-md mb-2">Preparing your manuscript?</h4>
+<p class="opacity-80 max-w-md">Our updated 2024 Submission Guidelines ensure your research meets all technical and ethical requirements for Nigerian Medical standards.</p>
+</div>
+<div class="relative z-10 mt-6">
+<button class="bg-paper-white text-primary px-6 py-2 rounded-lg font-label-sm text-label-sm hover:bg-secondary-fixed transition-colors">Download Template (DOCX)</button>
+</div>
+<!-- Abstract Background Pattern -->
+<div class="absolute right-[-20px] bottom-[-20px] opacity-10 pointer-events-none">
+<span class="material-symbols-outlined text-[200px]" data-icon="science">science</span>
+</div>
+</div>
+<div class="bg-surface-container-high rounded-2xl p-8 border border-outline-variant flex flex-col justify-center items-center text-center space-y-4">
+<div class="w-16 h-16 rounded-full bg-secondary-container flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined text-[32px]" data-icon="quiz">quiz</span>
+</div>
+<h4 class="font-headline-md text-[20px] text-primary">Need Assistance?</h4>
+<p class="font-label-sm text-label-sm text-on-surface-variant">Our editorial office is available Monday–Friday to answer your submission queries.</p>
+<a class="text-secondary font-bold hover:underline" href="mailto:support@nimasrepub.org">Contact Support</a>
+</div>
+</section>
+</div>
+<!-- Dashboard Footer -->
+<footer class="w-full py-12 px-gutter bg-primary dark:bg-ink-black text-on-primary mt-20">
+<div class="max-w-container-max mx-auto flex flex-col md:flex-row justify-between items-start gap-8">
+<div class="space-y-4 max-w-md">
+<h5 class="text-headline-md font-headline-md text-paper-white">NIMASREPUB</h5>
+<p class="font-ui-body text-ui-body opacity-70">
+                        Empowering Nigerian researchers in medical and allied sciences through rigorous peer-review and open-access excellence.
+                    </p>
+<p class="font-label-sm text-label-sm opacity-50">
+                        © 2024 NIMASREPUB. All Rights Reserved. ISSN: 2736-0717
+                    </p>
+</div>
+<div class="grid grid-cols-2 gap-x-12 gap-y-4">
+<a class="font-label-sm text-label-sm text-surface-variant/80 hover:text-paper-white underline transition-all" href="#">Privacy Policy</a>
+<a class="font-label-sm text-label-sm text-surface-variant/80 hover:text-paper-white underline transition-all" href="#">Publication Ethics</a>
+<a class="font-label-sm text-label-sm text-surface-variant/80 hover:text-paper-white underline transition-all" href="#">Open Access Statement</a>
+<a class="font-label-sm text-label-sm text-surface-variant/80 hover:text-paper-white underline transition-all" href="#">Google Scholar Indexing</a>
+</div>
+</div>
+</footer>
+</main>
+<!-- Mobile Bottom Navigation -->
+<nav class="md:hidden fixed bottom-0 left-0 w-full bg-surface-container-highest border-t border-outline-variant h-16 flex items-center justify-around z-50">
+<a class="flex flex-col items-center gap-1 text-primary" href="#">
+<span class="material-symbols-outlined active-nav-indicator" data-icon="dashboard">dashboard</span>
+<span class="text-[10px] font-bold">Home</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-on-surface-variant" href="#">
+<span class="material-symbols-outlined" data-icon="description">description</span>
+<span class="text-[10px]">Manuscripts</span>
+</a>
+<a class="flex flex-col items-center gap-1" href="#">
+<div class="bg-primary text-on-primary w-10 h-10 rounded-full flex items-center justify-center -mt-8 shadow-lg">
+<span class="material-symbols-outlined" data-icon="add">add</span>
+</div>
+<span class="text-[10px] text-on-surface-variant">New</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-on-surface-variant" href="#">
+<span class="material-symbols-outlined" data-icon="assignment_turned_in">assignment_turned_in</span>
+<span class="text-[10px]">Review</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-on-surface-variant" href="#">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+<span class="text-[10px]">Settings</span>
+</a>
+</nav>
+<script>
+        // Micro-interaction for hover states and button clicks
+        document.querySelectorAll('button').forEach(button => {
+            button.addEventListener('mousedown', () => {
+                button.classList.add('scale-95');
+            });
+            button.addEventListener('mouseup', () => {
+                button.classList.remove('scale-95');
+            });
+        });
+
+        // Simple search filter simulation
+        const searchInput = document.querySelector('input[placeholder="Search titles..."]');
+        if(searchInput) {
+            searchInput.addEventListener('input', (e) => {
+                const term = e.target.value.toLowerCase();
+                document.querySelectorAll('.group.bg-surface-container-lowest').forEach(card => {
+                    const title = card.querySelector('h4').textContent.toLowerCase();
+                    if(title.includes(term)) {
+                        card.style.display = 'block';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            });
+        }
+    </script>
+</body></html>

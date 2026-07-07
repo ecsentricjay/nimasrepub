@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Browse by Issue | NIMASREPUB</title>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,500;0,8..60,600;1,8..60,400&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "tertiary": "#371000",
+                        "primary-fixed-dim": "#aec6ff",
+                        "secondary-fixed-dim": "#88d982",
+                        "on-primary-container": "#7999dc",
+                        "inverse-primary": "#aec6ff",
+                        "on-primary-fixed": "#001a42",
+                        "error-container": "#ffdad6",
+                        "surface-variant": "#e3e2e8",
+                        "on-surface-variant": "#434750",
+                        "tertiary-fixed-dim": "#ffb596",
+                        "on-error-container": "#93000a",
+                        "medical-blue": "#0077C8",
+                        "error": "#ba1a1a",
+                        "status-under-review": "#F59E0B",
+                        "outline-variant": "#c4c6d2",
+                        "on-tertiary": "#ffffff",
+                        "secondary-container": "#a0f399",
+                        "on-primary-fixed-variant": "#224583",
+                        "surface-dim": "#dad9df",
+                        "science-green": "#4CAF50",
+                        "surface-container-low": "#f4f3f9",
+                        "background": "#faf9ff",
+                        "primary-fixed": "#d8e2ff",
+                        "on-primary": "#ffffff",
+                        "surface-container": "#eeedf3",
+                        "on-secondary-fixed-variant": "#005312",
+                        "primary": "#001b44",
+                        "on-secondary-fixed": "#002204",
+                        "surface-tint": "#3c5d9c",
+                        "paper-white": "#FFFFFF",
+                        "surface": "#faf9ff",
+                        "status-published": "#002F6C",
+                        "surface-bright": "#faf9ff",
+                        "ink-black": "#1A1C1E",
+                        "status-rejected": "#EF4444",
+                        "outline": "#747781",
+                        "surface-container-lowest": "#ffffff",
+                        "on-tertiary-fixed": "#360f00",
+                        "inverse-on-surface": "#f1f0f6",
+                        "on-tertiary-fixed-variant": "#753311",
+                        "inverse-surface": "#2f3035",
+                        "secondary": "#1b6d24",
+                        "surface-container-highest": "#e3e2e8",
+                        "tertiary-container": "#591f00",
+                        "status-accepted": "#10B981",
+                        "primary-container": "#002f6c",
+                        "tertiary-fixed": "#ffdbcd",
+                        "secondary-fixed": "#a3f69c",
+                        "surface-container-high": "#e8e7ed",
+                        "on-secondary": "#ffffff",
+                        "on-error": "#ffffff",
+                        "on-tertiary-container": "#db835a",
+                        "on-secondary-container": "#217128",
+                        "on-background": "#1a1b20",
+                        "on-surface": "#1a1b20"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "gutter": "24px",
+                        "container-max": "1280px",
+                        "section-gap": "64px",
+                        "unit": "4px",
+                        "margin-mobile": "16px"
+                    },
+                    "fontFamily": {
+                        "article-abstract": ["\"Source Serif 4\""],
+                        "label-sm": ["Manrope"],
+                        "headline-md": ["Manrope"],
+                        "headline-lg": ["Manrope"],
+                        "ui-body": ["Manrope"],
+                        "article-body": ["\"Source Serif 4\""],
+                        "display-lg": ["Manrope"]
+                    },
+                    "fontSize": {
+                        "article-abstract": ["20px", {"lineHeight": "34px", "fontWeight": "500"}],
+                        "label-sm": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                        "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                        "headline-lg": ["32px", {"lineHeight": "40px", "fontWeight": "600"}],
+                        "ui-body": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "article-body": ["18px", {"lineHeight": "32px", "fontWeight": "400"}],
+                        "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .issue-card:hover .issue-cover {
+            transform: translateY(-8px);
+        }
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 4px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #001b44;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body class="bg-surface font-ui-body text-on-surface">
+<!-- TopNavBar -->
+<header class="bg-surface border-b border-outline-variant fixed top-0 w-full z-50">
+<div class="flex justify-between items-center w-full px-gutter max-w-container-max mx-auto h-20">
+<div class="flex items-center gap-8">
+<a class="text-headline-lg font-headline-lg font-bold text-primary" href="#">NIMASREPUB</a>
+<nav class="hidden md:flex gap-6 items-center">
+<a class="font-label-sm text-label-sm text-primary border-b-2 border-primary pb-1" href="#">Browse</a>
+<a class="font-label-sm text-label-sm text-on-surface-variant hover:text-primary transition-colors" href="#">About</a>
+<a class="font-label-sm text-label-sm text-on-surface-variant hover:text-primary transition-colors" href="#">Guidelines</a>
+<a class="font-label-sm text-label-sm text-on-surface-variant hover:text-primary transition-colors" href="#">Login</a>
+</nav>
+</div>
+<div class="flex items-center gap-4">
+<button class="px-6 py-2 bg-primary text-white font-label-sm text-label-sm rounded-lg hover:opacity-90 active:scale-95 transition-all">Submit Manuscript</button>
+<button class="px-6 py-2 border border-primary text-primary font-label-sm text-label-sm rounded-lg hover:bg-surface-variant active:scale-95 transition-all">Join</button>
+</div>
+</div>
+</header>
+<main class="pt-32 pb-section-gap max-w-container-max mx-auto px-gutter">
+<!-- Header & Search -->
+<div class="mb-12">
+<h1 class="font-display-lg text-display-lg text-primary mb-6">Archive &amp; Browse Issues</h1>
+<div class="relative w-full max-w-2xl group">
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-outline">search</span>
+<input class="w-full pl-12 pr-4 py-4 bg-white border border-outline-variant rounded-xl focus:ring-2 focus:ring-primary focus:border-primary outline-none transition-all shadow-sm" placeholder="Search articles by keyword, DOI, or author..." type="text"/>
+</div>
+</div>
+<div class="flex flex-col lg:flex-row gap-12">
+<!-- Filters Sidebar -->
+<aside class="w-full lg:w-64 flex-shrink-0 space-y-8">
+<div>
+<h3 class="font-label-sm text-label-sm text-on-surface-variant uppercase mb-4">Filter by Year</h3>
+<div class="flex flex-col gap-2">
+<label class="flex items-center gap-3 cursor-pointer group">
+<input checked="" class="w-5 h-5 rounded border-outline-variant text-primary focus:ring-primary" type="checkbox"/>
+<span class="text-ui-body font-ui-body group-hover:text-primary transition-colors">2024 (Current)</span>
+</label>
+<label class="flex items-center gap-3 cursor-pointer group">
+<input class="w-5 h-5 rounded border-outline-variant text-primary focus:ring-primary" type="checkbox"/>
+<span class="text-ui-body font-ui-body group-hover:text-primary transition-colors">2023</span>
+</label>
+<label class="flex items-center gap-3 cursor-pointer group">
+<input class="w-5 h-5 rounded border-outline-variant text-primary focus:ring-primary" type="checkbox"/>
+<span class="text-ui-body font-ui-body group-hover:text-primary transition-colors">2022</span>
+</label>
+<label class="flex items-center gap-3 cursor-pointer group">
+<input class="w-5 h-5 rounded border-outline-variant text-primary focus:ring-primary" type="checkbox"/>
+<span class="text-ui-body font-ui-body group-hover:text-primary transition-colors">2021</span>
+</label>
+</div>
+</div>
+<div>
+<h3 class="font-label-sm text-label-sm text-on-surface-variant uppercase mb-4">Section</h3>
+<div class="flex flex-wrap lg:flex-col gap-2">
+<button class="px-3 py-1.5 text-left rounded-lg bg-primary-container text-on-primary-container font-label-sm text-label-sm">All Sections</button>
+<button class="px-3 py-1.5 text-left rounded-lg hover:bg-surface-container font-label-sm text-label-sm">Medicine</button>
+<button class="px-3 py-1.5 text-left rounded-lg hover:bg-surface-container font-label-sm text-label-sm">Lab Sciences</button>
+<button class="px-3 py-1.5 text-left rounded-lg hover:bg-surface-container font-label-sm text-label-sm">Physiotherapy</button>
+<button class="px-3 py-1.5 text-left rounded-lg hover:bg-surface-container font-label-sm text-label-sm">Radiography</button>
+<button class="px-3 py-1.5 text-left rounded-lg hover:bg-surface-container font-label-sm text-label-sm">Nursing</button>
+</div>
+</div>
+</aside>
+<!-- Main Content Area -->
+<div class="flex-grow space-y-16">
+<!-- Volume Section -->
+<section>
+<div class="flex items-baseline gap-4 mb-8 border-b border-outline-variant pb-2">
+<h2 class="font-headline-lg text-headline-lg text-primary">Volume 4</h2>
+<span class="text-on-surface-variant font-ui-body">(2024)</span>
+</div>
+<div class="grid grid-cols-1 xl:grid-cols-2 gap-8">
+<!-- Issue Card 1 -->
+<div class="issue-card bg-white border border-outline-variant rounded-xl overflow-hidden flex flex-col md:flex-row group transition-all hover:border-primary">
+<div class="w-full md:w-48 bg-surface-container flex-shrink-0 p-6 flex items-center justify-center relative overflow-hidden">
+<div class="issue-cover w-32 h-44 bg-white shadow-xl rounded-sm transition-transform duration-500 flex flex-col p-3 border border-outline-variant" data-alt="A professional medical journal cover for NIMASREPUB Volume 4 Issue 2, featuring a minimalist dark blue and white aesthetic with a stylized DNA helix graphic. The lighting is crisp and scholarly, conveying institutional authority and clinical precision. The overall mood is academic, scientific, and highly credible." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDKeLDYy2Fb2bCmZcK1f_drd43wNyqwzJPRq5lKYcJ0MCzSuocG4LuWDCS02eG3Ghd6ctou88_BD6NLH7qCCqTw5EqUrf8md1CtUNgRU39UlXPGsyaXxVznE5JhHFsTuH75j3Ki3jn5Up1zW3duZVIUcz_-gjZhLgqBnsXEbLese8RLHhQiwxadYu85X5KCCpJHSYRYtrTVA96rCY8t3oR3kFFFdrTO3gOBjVidavU4EW6trR5Wxx-9hrsFEXYzztE3umNj0va53389')">
+<div class="text-[8px] font-bold text-primary mb-1">NIMASREPUB</div>
+<div class="h-0.5 w-full bg-primary mb-2"></div>
+<div class="text-[6px] text-on-surface-variant">Vol 4 | Issue 2</div>
+<div class="mt-auto text-[4px] text-outline">ISSN: 2736-0717</div>
+</div>
+</div>
+<div class="p-6 flex flex-col justify-between flex-grow">
+<div>
+<div class="flex justify-between items-start mb-2">
+<h3 class="font-headline-md text-headline-md text-primary">Issue 2: Current Trends</h3>
+<span class="px-2 py-0.5 bg-secondary-container text-on-secondary-container rounded font-label-sm text-[10px]">LATEST</span>
+</div>
+<p class="text-label-sm text-on-surface-variant mb-4">Published: June 15, 2024</p>
+<div class="space-y-3 max-h-32 overflow-y-auto custom-scrollbar pr-2 mb-4">
+<div class="group/link cursor-pointer">
+<p class="text-sm font-article-abstract line-clamp-1 group-hover/link:text-medical-blue transition-colors">Prevalence of Metabolic Syndrome in Urban Lagos...</p>
+<p class="text-[10px] text-outline">Okonkwo, et al. • Medicine</p>
+</div>
+<div class="group/link cursor-pointer border-t border-surface-variant pt-2">
+<p class="text-sm font-article-abstract line-clamp-1 group-hover/link:text-medical-blue transition-colors">Efficacy of Novel Biomarkers in Early Renal...</p>
+<p class="text-[10px] text-outline">Adeyemi, et al. • Lab Sciences</p>
+</div>
+<div class="group/link cursor-pointer border-t border-surface-variant pt-2">
+<p class="text-sm font-article-abstract line-clamp-1 group-hover/link:text-medical-blue transition-colors">Radiographic Assessment of Bone Density in...</p>
+<p class="text-[10px] text-outline">Ibrahim, et al. • Radiography</p>
+</div>
+</div>
+</div>
+<div class="flex items-center justify-between mt-auto pt-4 border-t border-outline-variant">
+<a class="text-primary font-label-sm text-label-sm flex items-center gap-1 hover:underline" href="#">
+                                        View Full Table of Contents
+                                        <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</a>
+<span class="text-outline text-[11px]">8 Articles</span>
+</div>
+</div>
+</div>
+<!-- Issue Card 2 -->
+<div class="issue-card bg-white border border-outline-variant rounded-xl overflow-hidden flex flex-col md:flex-row group transition-all hover:border-primary">
+<div class="w-full md:w-48 bg-surface-container flex-shrink-0 p-6 flex items-center justify-center relative overflow-hidden">
+<div class="issue-cover w-32 h-44 bg-white shadow-xl rounded-sm transition-transform duration-500 flex flex-col p-3 border border-outline-variant" data-alt="A clean, academic medical journal cover for NIMASREPUB Volume 4 Issue 1. The cover features a sophisticated forest green and white color palette, with a subtle microscopic texture pattern in the background. The typography is elegant and professional, with a focus on legibility and institutional trust. The lighting is soft and even, typical of a scholarly publication." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDyvezkvgIKRB3txy7Hqd53PtLbary60elXCbQ_-1lT8Uhz6XG1VswCCfqR7uI-y9f_0QTEf-xvKKqf0yVqpCGG5_2k6QT0EU0kFtPVVg8HGlnTtsqL4B1cyxWR2g2VEmtQHazKU-ko16ilPSxys95qYbVc_t8q27nq0kK62q_9PcaMhDJwPsBKvQGwYlPOdnTPpkGCfQMXZPdxshPNnm4rh892kM6jeZLVWolFp3iUin3YmlQOPYGRuz9t9pgAAhjE630mvuEvj0E4')">
+<div class="text-[8px] font-bold text-primary mb-1">NIMASREPUB</div>
+<div class="h-0.5 w-full bg-primary mb-2"></div>
+<div class="text-[6px] text-on-surface-variant">Vol 4 | Issue 1</div>
+<div class="mt-auto text-[4px] text-outline">ISSN: 2736-0717</div>
+</div>
+</div>
+<div class="p-6 flex flex-col justify-between flex-grow">
+<div>
+<h3 class="font-headline-md text-headline-md text-primary mb-2">Issue 1: Clinical Innovations</h3>
+<p class="text-label-sm text-on-surface-variant mb-4">Published: Jan 20, 2024</p>
+<div class="space-y-3 max-h-32 overflow-y-auto custom-scrollbar pr-2 mb-4">
+<div class="group/link cursor-pointer">
+<p class="text-sm font-article-abstract line-clamp-1 group-hover/link:text-medical-blue transition-colors">Post-Operative Recovery Protocols in Rural Hospitals</p>
+<p class="text-[10px] text-outline">Chukwuma, et al. • Nursing</p>
+</div>
+<div class="group/link cursor-pointer border-t border-surface-variant pt-2">
+<p class="text-sm font-article-abstract line-clamp-1 group-hover/link:text-medical-blue transition-colors">Molecular Characterization of Drug-Resistant Strains</p>
+<p class="text-[10px] text-outline">Bello, et al. • Medicine</p>
+</div>
+</div>
+</div>
+<div class="flex items-center justify-between mt-auto pt-4 border-t border-outline-variant">
+<a class="text-primary font-label-sm text-label-sm flex items-center gap-1 hover:underline" href="#">
+                                        View Full Table of Contents
+                                        <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</a>
+<span class="text-outline text-[11px]">12 Articles</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Older Volume Section -->
+<section>
+<div class="flex items-baseline gap-4 mb-8 border-b border-outline-variant pb-2">
+<h2 class="font-headline-lg text-headline-lg text-primary opacity-60">Volume 3</h2>
+<span class="text-on-surface-variant font-ui-body opacity-60">(2023)</span>
+</div>
+<div class="bg-white border border-outline-variant rounded-xl divide-y divide-outline-variant">
+<!-- List Item 1 -->
+<div class="p-6 flex items-center justify-between hover:bg-surface-container-low transition-colors cursor-pointer group">
+<div class="flex items-center gap-6">
+<div class="w-12 h-16 bg-surface-container border border-outline-variant rounded shadow-sm flex items-center justify-center p-1">
+<div class="text-[5px] text-primary font-bold text-center">Vol 3<br/>Issue 4</div>
+</div>
+<div>
+<h4 class="font-headline-md text-headline-md text-primary group-hover:text-medical-blue transition-colors">Volume 3, Issue 4</h4>
+<p class="text-label-sm text-on-surface-variant">October - December 2023 • 15 Articles</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-outline group-hover:text-primary transition-all group-hover:translate-x-1">chevron_right</span>
+</div>
+<!-- List Item 2 -->
+<div class="p-6 flex items-center justify-between hover:bg-surface-container-low transition-colors cursor-pointer group">
+<div class="flex items-center gap-6">
+<div class="w-12 h-16 bg-surface-container border border-outline-variant rounded shadow-sm flex items-center justify-center p-1">
+<div class="text-[5px] text-primary font-bold text-center">Vol 3<br/>Issue 3</div>
+</div>
+<div>
+<h4 class="font-headline-md text-headline-md text-primary group-hover:text-medical-blue transition-colors">Volume 3, Issue 3</h4>
+<p class="text-label-sm text-on-surface-variant">July - September 2023 • 10 Articles</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-outline group-hover:text-primary transition-all group-hover:translate-x-1">chevron_right</span>
+</div>
+<!-- List Item 3 -->
+<div class="p-6 flex items-center justify-between hover:bg-surface-container-low transition-colors cursor-pointer group">
+<div class="flex items-center gap-6">
+<div class="w-12 h-16 bg-surface-container border border-outline-variant rounded shadow-sm flex items-center justify-center p-1">
+<div class="text-[5px] text-primary font-bold text-center">Vol 3<br/>Issue 2</div>
+</div>
+<div>
+<h4 class="font-headline-md text-headline-md text-primary group-hover:text-medical-blue transition-colors">Volume 3, Issue 2</h4>
+<p class="text-label-sm text-on-surface-variant">April - June 2023 • 14 Articles</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-outline group-hover:text-primary transition-all group-hover:translate-x-1">chevron_right</span>
+</div>
+</div>
+<div class="mt-6 text-center">
+<button class="px-8 py-3 border border-outline text-primary font-label-sm text-label-sm rounded-lg hover:bg-surface-container transition-all">Load More Volumes</button>
+</div>
+</section>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="bg-primary text-on-primary py-section-gap">
+<div class="w-full px-gutter flex flex-col md:flex-row justify-between items-start max-w-container-max mx-auto">
+<div class="mb-12 md:mb-0 max-w-sm">
+<h2 class="text-headline-md font-headline-md text-paper-white mb-6">NIMASREPUB</h2>
+<p class="text-surface-variant/80 font-ui-body mb-6">A premier peer-reviewed scholarly repository dedicated to the Nigerian medical and allied sciences community, fostering institutional authority and research excellence.</p>
+<div class="flex gap-4">
+<span class="material-symbols-outlined cursor-pointer hover:text-paper-white transition-all">rss_feed</span>
+<span class="material-symbols-outlined cursor-pointer hover:text-paper-white transition-all">mail</span>
+</div>
+</div>
+<div class="grid grid-cols-2 lg:grid-cols-3 gap-12">
+<div>
+<h4 class="font-label-sm text-label-sm text-paper-white uppercase mb-4 tracking-widest">Journal</h4>
+<ul class="space-y-3">
+<li><a class="text-surface-variant/80 font-ui-body hover:text-paper-white transition-all" href="#">Current Issue</a></li>
+<li><a class="text-surface-variant/80 font-ui-body hover:text-paper-white transition-all font-bold text-secondary-fixed" href="#">Archive</a></li>
+<li><a class="text-surface-variant/80 font-ui-body hover:text-paper-white transition-all" href="#">Submit Manuscript</a></li>
+<li><a class="text-surface-variant/80 font-ui-body hover:text-paper-white transition-all" href="#">Google Scholar Indexing</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-label-sm text-label-sm text-paper-white uppercase mb-4 tracking-widest">Policies</h4>
+<ul class="space-y-3">
+<li><a class="text-surface-variant/80 font-ui-body hover:text-paper-white transition-all" href="#">Privacy Policy</a></li>
+<li><a class="text-surface-variant/80 font-ui-body hover:text-paper-white transition-all" href="#">Publication Ethics</a></li>
+<li><a class="text-surface-variant/80 font-ui-body hover:text-paper-white transition-all" href="#">Open Access Statement</a></li>
+</ul>
+</div>
+<div class="col-span-2 lg:col-span-1">
+<h4 class="font-label-sm text-label-sm text-paper-white uppercase mb-4 tracking-widest">Contact</h4>
+<p class="text-surface-variant/80 font-ui-body mb-2">College of Health Sciences,</p>
+<p class="text-surface-variant/80 font-ui-body mb-4">University of Nigeria.</p>
+<a class="text-secondary-fixed hover:underline font-label-sm text-label-sm" href="mailto:editor@nimasrepub.org">editor@nimasrepub.org</a>
+</div>
+</div>
+</div>
+<div class="max-w-container-max mx-auto px-gutter mt-16 pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-4">
+<p class="text-label-sm text-label-sm text-surface-variant/60 text-center md:text-left">© 2024 Nigerian Medical and Allied Sciences Research Publication (NIMASREPUB). All Rights Reserved. ISSN: 2736-0717</p>
+<div class="flex gap-6">
+<a class="text-[10px] text-surface-variant/40 hover:text-paper-white" href="#">Terms of Service</a>
+<a class="text-[10px] text-surface-variant/40 hover:text-paper-white" href="#">Accessibility</a>
+</div>
+</div>
+</footer>
+<!-- Micro-interactions Script -->
+<script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Simple active state for year checkboxes
+            const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+            checkboxes.forEach(cb => {
+                cb.addEventListener('change', (e) => {
+                    const span = e.target.nextElementSibling;
+                    if (e.target.checked) {
+                        span.classList.add('text-primary', 'font-bold');
+                    } else {
+                        span.classList.remove('text-primary', 'font-bold');
+                    }
+                });
+            });
+
+            // Section buttons toggle
+            const sectionButtons = document.querySelectorAll('aside div:last-child button');
+            sectionButtons.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    sectionButtons.forEach(b => b.classList.remove('bg-primary-container', 'text-on-primary-container'));
+                    btn.classList.add('bg-primary-container', 'text-on-primary-container');
+                });
+            });
+        });
+    </script>
+</body></html>
